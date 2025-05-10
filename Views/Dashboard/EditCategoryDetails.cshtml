@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Edit Category Details";
+}
+
+
+<section class="py-3 py-md-5 py-xl-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5">
+                    <h2 class="display-5 fw-bold text-center">Edit Category - ID: @Model.Id</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="row gy-5 justify-content-center">
+                    <div class="col-12 col-lg-5">
+                        <form method="post">
+                            <div class="row gy-3 overflow-hidden">
+                                @* Add maxlength *@
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control border-0 border-bottom rounded-0" name="Name" id="Name" maxlength="100" autocomplete="flase" value="@Model.Name">
+                                        <label for="Name" class="form-label">Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        @* <input type="text" class="form-control border-0 border-bottom rounded-0" name="Description" id="Description" value="@Model.Email" autocomplete="flase"> *@
+                                        <textarea class="form-control" name="Description" id="Description" rows="3" autocomplete="flase" value="@Model.Description"></textarea>
+                                        <label for="Description" class="form-label">Description</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="file" class="form-control-file" name="ImageURL" id="ImageURL" maxlength="20" autocomplete="flase" value="@Model.ImageURL" />
+                                        <label for="ImageURL" class="form-label">Image</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg" type="submit">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

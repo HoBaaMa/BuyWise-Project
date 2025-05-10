@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Display Categories";
+}
+
+
+@using BuyWise.Models.Products
+<table class="table table-info table-bordered text-center table-striped">
+    <caption><a asp-controller="Dashboard" asp-action="CreateCategory"> Create Category</a><caption>
+    <thead>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (Category c in Model)
+            {
+                <tr>
+                    <td>@c.Name</td>
+                    <td>@c.ImageURL</td>
+                    <td>
+                        <a asp-action="EditCategoryDetails" asp-route-categoryId="@c.Id"><span class="fas fa-edit"></span></a> <span> | </span> <a asp-action="DeleteCategory" asp-route-categoryId="@c.Id" onclick="return confirm('Are You Sure?')"><span class="fas fa-trash"></span></a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

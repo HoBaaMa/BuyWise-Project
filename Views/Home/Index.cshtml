@@ -1,0 +1,231 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <div class="text-center"> *@
+<div id="header-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="height: 410px;">
+            <img class="img-fluid" src="img/banner_home1.png" alt="Image">
+        </div>
+        <div class="carousel-item" style="height: 410px;">
+            <img class="img-fluid" src="img/banner_home2.png" alt="Image">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <span class="carousel-control-prev-icon mb-n2"></span>
+        </div>
+    </a>
+    <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+        <div class="btn btn-dark" style="width: 45px; height: 45px;">
+            <span class="carousel-control-next-icon mb-n2"></span>
+        </div>
+    </a>
+</div>
+
+<!-- Featured Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5 pb-3">
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-check m-0 mr-3" style="color: #FF8716;"></h1>
+                <h5 class="font-weight-semi-bold m-0">Quality Product</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-shipping-fast m-0 mr-2" style="color: #FF8716;"></h1>
+                <h5 class="font-weight-semi-bold m-0">Free Shipping</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fas fa-exchange-alt m-0 mr-3" style="color: #FF8716;"></h1>
+                <h5 class="font-weight-semi-bold m-0">14-Day Return</h5>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
+            <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
+                <h1 class="fa fa-phone-volume m-0 mr-3" style="color: #FF8716;"></h1>
+                <h5 class="font-weight-semi-bold m-0">24/7 Support</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Featured End -->
+<!-- Categories Start -->
+<div class="banners_4">
+    <div class="container">
+
+
+        <div class="box">
+            <a href="#" class="link_btn"></a>
+
+            <img src="img/banner3_1.png" alt="">
+            <div class="text">
+                <h5>Break Disc</h5>
+                <h5>deals on this</h5>
+
+                <div class="sale">
+                    <p>Up <br> To</p>
+                    <span>70%</span>
+                </div>
+
+                <h6>Shop Now</h6>
+
+            </div>
+        </div>
+
+
+
+        <div class="box">
+            <a href="#" class="link_btn"></a>
+
+            <img src="img/banner3_2.png" alt="">
+            <div class="text">
+                <h5>Break Disc</h5>
+                <h5>deals on this</h5>
+                <div class="sale">
+                    <p>Up <br> To</p>
+                    <span>70%</span>
+                </div>
+
+                <h6>Shop Now</h6>
+
+            </div>
+        </div>
+
+
+
+        <div class="box">
+            <a href="#" class="link_btn"></a>
+
+            <img src="img/banner3_3.png" alt="">
+            <div class="text">
+                <h5>Break Disc</h5>
+                <h5>deals on this</h5>
+                <div class="sale">
+                    <p>Up <br> To</p>
+                    <span>70%</span>
+                </div>
+
+                <h6>Shop Now</h6>
+
+            </div>
+        </div>
+
+
+
+        <div class="box">
+            <a href="#" class="link_btn"></a>
+
+            <img src="img/banner3_4.png" alt="">
+            <div class="text">
+                <h5>Break Disc</h5>
+                <h5>deals on this</h5>
+                <div class="sale">
+                    <p>Up <br> To</p>
+                    <span>70%</span>
+
+                </div>
+                <h6>Shop Now</h6>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Categories End -->
+
+<!-- Hot Deals Slider Start -->
+<div class="container-fluid pt-5">
+    <div class="d-flex align-items-center mb-4">
+        <div class="bg-warning px-4 py-2 rounded-left d-flex align-items-center"
+             style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+            <i class="fa fa-bolt mr-2"></i>
+            <span class="font-weight-bold text-white">HOT DEALS</span>
+        </div>
+    </div>
+    <div id="hotDealsCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    @foreach (var product in ViewBag.HotDeals)
+                    {
+                        <div class="col-md-2 d-flex">
+                            <div class="card product-card position-relative mb-4 h-100 d-flex flex-column">
+                                <span class="badge badge-danger position-absolute"
+                                      style="top:10px; right:10px;">%@(product.Discount)</span>
+                                <img src="~/img/@product.ProductImage" class="card-img-top" alt="Product">
+                                <div class="card-body text-center flex-grow-1 d-flex flex-column">
+                                    <div class="mb-2">
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                        <span class="fa fa-star text-warning"></span>
+                                    </div>
+                                    <h6 class="card-title">@product.ProductName</h6>
+                                    <div>
+                                        <span class="text-warning font-weight-bold">$@product.ProductPriceAfterDiscount</span>
+                                        <span class="text-muted"><del>$@product.ProductPrice</del></span>
+                                    </div>
+                                    <a href="@Url.Action("ProductDetail", "Home", new { productId = product.ProductId })"
+                                       class="btn btn-warning btn-block mt-auto">
+                                        <i class="fa fa-eye"></i> View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <!-- Add more .carousel-item blocks for more slides if needed -->
+        </div>
+        <a class="carousel-control-prev" href="#hotDealsCarousel" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#hotDealsCarousel" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+</div>
+<!-- Hot Deals Slider End -->
+<!-- Banners Start -->
+<div class="banners">
+    <div class="container">
+        <div class="banners_boxs banner_3_img" style="margin:40px;">
+            <a href="#" class="box"><img src="img/banner_box1.jpg" alt=""></a>
+            @* <a href="#" class="box"><img src="img/banner_box2.jpg" alt=""></a> *@
+            <a href="#" class="box"><img src="img/banner_box3.jpg" alt=""></a>
+        </div>
+    </div>
+</div>
+<!-- Banners End -->
+
+<!-- Subscribe Start -->
+<div class="container-fluid bg-secondary my-5">
+    <div class="row justify-content-md-center py-5 px-xl-5">
+        <div class="col-md-6 col-12 py-5">
+            <div class="text-center mb-2 pb-2">
+                <h2 class="section-title px-5 mb-3"><span class="bg-secondary px-2">Stay Updated</span></h2>
+                <p>
+                    Amet lorem at rebum amet dolores. Elitr lorem dolor sed amet diam labore at justo ipsum eirmod duo
+                    labore labore.
+                </p>
+            </div>
+            <form action="">
+                <div class="input-group">
+                    <input type="text" class="form-control border-white p-4" placeholder="Email Goes Here">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-4">Subscribe</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Subscribe End -->
+

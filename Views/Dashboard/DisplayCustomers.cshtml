@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Display Customers";
+}
+
+
+<table class="table table-info table-bordered text-center table-striped">
+    <thead>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Actions</th>
+    </thead>
+    <tbody>
+        @foreach(Customer c in Model)
+        {
+            <tr>
+                <td>@c.Name</td>
+                <td>@c.Email</td>
+                <td>@c.Mobile</td>
+                <td>
+                    <a asp-action="EditCustomerDetails" asp-route-customerId="@c.Id">Edit</a> <span> | </span> <a asp-action="DeleteCustomer" asp-route-customerId="@c.Id" onclick="return confirm('Are You Sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

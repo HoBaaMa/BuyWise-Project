@@ -1,0 +1,135 @@
+﻿<!-- Topbar Start -->
+<div class="container-fluid">
+    <div class="row bg-secondary py-2 px-xl-5">
+        <div class="col-lg-6 d-none d-lg-block">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark" href="">FAQs</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-dark" href="">Help</a>
+                <span class="text-muted px-2">|</span>
+                <a class="text-dark" href="">Support</a>
+            </div>
+        </div>
+        <div class="col-lg-6 text-center text-lg-right">
+            <div class="d-inline-flex align-items-center">
+                <a class="text-dark px-2" href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a class="text-dark px-2" href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="text-dark pl-2" href="">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center py-3 px-xl-5">
+        <div class="col-lg-3 d-none d-lg-block">
+            <a href="/" class="text-decoration-none d-flex align-items-center">
+                <span class="logo-icon mr-2">
+                    <i class="fas fa-shopping-bag"></i>
+                </span>
+                <span class="logo-text">
+                    <span class="buy">Buy</span><span class="wise">Wise</span>
+                </span>
+            </a>
+        </div>
+        <div class="col-lg-6 col-6 text-left">
+            <form asp-controller="Search" asp-action="Index" method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for products" name="searchFor">
+                    <div class="input-group-append">
+                        <button class="input-group-text bg-transparent text-primary" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        <button class="input-group-text bg-transparent p-2" type="button" data-toggle="modal"
+                                data-target="#advancedSearchModal" title="Advanced Search" style="border-left: none;">
+                            <i class="fas fa-filter" style="font-size: 1.1rem; color: #FF8716;"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-3 col-6 text-right">
+            <a href="" class="btn border">
+                <i class="fas fa-heart text-primary"></i>
+                <span class="badge">0</span>
+            </a>
+            <a href="" class="btn border">
+                <i class="fas fa-shopping-cart text-primary"></i>
+                <span class="badge">0</span>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+<!-- Modal -->
+<div class="modal fade" id="advancedSearchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <form method="post" asp-action="index" asp-controller="search">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Advanced Search</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="ProductName">Product Name</label>
+                        <input type="text" class="form-control" id="ProductName" name="ProductName"
+                               placeholder="Enter Product Name" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="MinimumPrice" style="display:block;">Product Price</label>
+                        <input type="number" class="form-control" style="display:inline-block;width:45%"
+                               id="MinimumPrice" name="MinimumPrice" placeholder="Minimum Price">
+                        <span> - </span>
+                        <input type="number" class="form-control" style="display:inline-block;width:45%"
+                               id="MaximumPrice" name="MaximumPrice" placeholder="Maximum Price">
+                    </div>
+                    <div class="form-group">
+                        <label for="CategoryId">Category</label>
+                        <select class="form-control" id="CategoryId" name="CategoryId">
+                            <option>Select Category</option>
+                            <option value="2">Electornics & Digital </option>
+                            <option value="3">Smarth Phones & Tablets</option>
+                            <option value="4">Swimwear</option>
+                            <option value="5">Sleepwear</option>
+                            <option value="6">Jumpsuits</option>
+                            <option value="7">Jackets</option>
+                            <option value="8">Shoes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="BrandId">Brand</label>
+                        <select class="form-control" id="BrandId" name="BrandId">
+                            <option>Select Brand</option>
+                            <option value="1">Brand - 1</option>
+                            <option value="2">Brand - 2</option>
+                            <option value="3">Brand - 3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="SearchFor">Search For</label>
+                        <textarea class="form-control" id="SearchFor" name="SearchFor" rows="3"></textarea>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary"><span class="fas fa-search"></span> Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

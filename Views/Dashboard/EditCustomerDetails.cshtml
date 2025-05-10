@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Edit Customers Details";
+}
+
+
+<section class="py-3 py-md-5 py-xl-8">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-5">
+                    <h2 class="display-5 fw-bold text-center">Edit Customer - ID: @Model.Id</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="row gy-5 justify-content-center">
+                    <div class="col-12 col-lg-5">
+                        <form method="post">
+                            <input type="hidden" value="@Model.Id" name="Id" id="Id"/>
+                            <div class="row gy-3 overflow-hidden">
+                                @* Add maxlength *@
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control border-0 border-bottom rounded-0" name="Name" id="Name" maxlength="100" value="@Model.Name" autocomplete="flase">
+                                        <label for="Name" class="form-label">Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="email" class="form-control border-0 border-bottom rounded-0" name="Email" id="Email" maxlength="200" value="@Model.Email" autocomplete="flase">
+                                        <label for="Email" class="form-label">Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control border-0 border-bottom rounded-0" name="Mobile" id="Mobile" maxlength="20" value="@Model.Mobile" autocomplete="flase" />
+                                        <label for="Mobile" class="form-label">Mobile</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg" type="submit">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

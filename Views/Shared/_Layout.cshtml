@@ -1,0 +1,14 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<partial name="Partials/_Head.cshtml" />
+<body>
+    <partial name="Partials/_TopBar.cshtml" />
+    <partial name="Partials/_NavBar.cshtml" />
+    <div class="container pt-5">
+        @RenderBody()
+    </div>
+    <partial name="Partials/_Footer.cshtml" />
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>
